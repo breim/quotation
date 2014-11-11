@@ -1,0 +1,118 @@
+.navbar-user {
+  background-color: #428bca;
+  border-color: #337ab7;
+  .navbar-brand {
+    color: #ffffff;
+    &:hover, &:focus {
+      color: #e6e6e6;
+      background-color: transparent;
+    }
+    .brand-logo{
+      margin-top:-4px;
+    }
+  }
+  .navbar-text {
+    color: #ffffff;
+  }
+  .navbar-nav > {
+    li {
+      &:last-child > a {
+        border-right: 1px solid #337ab7;
+      }
+      > a {
+        color: #ffffff;
+        border-left: 1px solid #337ab7;
+        &:hover, &:focus {
+          color: #ececec;
+          background-color: transparent;
+        }
+      }
+    }
+    .active > a {
+      color: #ececec;
+      background-color: #337ab7;
+      &:hover, &:focus {
+        color: #ececec;
+        background-color: #337ab7;
+      }
+    }
+    .disabled > a {
+      color: #cccccc;
+      background-color: transparent;
+      &:hover, &:focus {
+        color: #cccccc;
+        background-color: transparent;
+      }
+    }
+  }
+  .navbar-toggle {
+    border-color: #dddddd;
+    &:hover, &:focus {
+      background-color: #dddddd;
+    }
+    .icon-bar {
+      background-color: #cccccc;
+    }
+  }
+  .navbar-collapse, .navbar-form {
+    border-color: #3379b5;
+  }
+  .navbar-nav > {
+    .dropdown > a {
+      &:hover .caret, &:focus .caret {
+        border-top-color: #ececec;
+        border-bottom-color: #ececec;
+      }
+    }
+    .open > a {
+      background-color: #337ab7;
+      color: #ececec;
+      &:hover, &:focus {
+        background-color: #337ab7;
+        color: #ececec;
+      }
+      .caret, &:hover .caret, &:focus .caret {
+        border-top-color: #ececec;
+        border-bottom-color: #ececec;
+      }
+    }
+    .dropdown > a .caret {
+      border-top-color: #ffffff;
+      border-bottom-color: #ffffff;
+    }
+  }
+  .navbar-link {
+    color: #ffffff;
+    &:hover {
+      color: #ececec;
+    }
+  }
+}
+
+@media (max-width: 767) {
+  .navbar-user .navbar-nav .open .dropdown-menu > {
+    li > a {
+      color: #ffffff;
+      &:hover, &:focus {
+        color: #ececec;
+        background-color: transparent;
+      }
+    }
+    .active > a {
+      color: #ececec;
+      background-color: #337ab7;
+      &:hover, &:focus {
+        color: #ececec;
+        background-color: #337ab7;
+      }
+    }
+    .disabled > a {
+      color: #cccccc;
+      background-color: transparent;
+      &:hover, &:focus {
+        color: #cccccc;
+        background-color: transparent;
+      }
+    }
+  }
+}

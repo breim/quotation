@@ -1,0 +1,58 @@
+<%= render 'layouts/navbar_institutional' %>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-6 col-sm-6 col-md-6 col-lg-offset-3">
+      <h2>Cadastro</h2>
+      <div class="user-container">
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        
+
+        <%= devise_error_messages! %>
+
+
+        <div class="form-group">
+          <%= f.label :nome %><br />
+          <%= f.text_field :name,:class => "form-control required", autofocus: true %>
+        </div>
+
+
+        <div class="form-group">
+          <%= f.label :cpf ,"CPF" %>
+          <%= f.text_field :cpf,:class => "form-control required" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email,:class => "form-control required" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <% if @validatable %>
+          <em>(<%= @minimum_password_length %> caracteres)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "off",:class => "form-control required" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "off",:class => "form-control required" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Cadastrar",:class => "btn btn-lg btn-primary btn-block" %>
+        </div>
+        <% end %>
+
+      </div>
+      <center>
+        <%= render "users/shared/links" %>
+      </center>
+    </div>
+  </div>
+
+</div>

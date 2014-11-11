@@ -1,0 +1,6 @@
+<%= render 'layouts/navbar_institutional' %>
+<% if current_user  %>
+	<%= current_user.name %>
+<% else %>
+	<%= link_to 'Entrar',new_user_session_path %> 
+<% end %>

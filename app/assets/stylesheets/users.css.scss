@@ -1,0 +1,19 @@
+body {
+  padding-top: 80px;
+  background-color: #f0f0f0;
+}
+.user-container{
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+
+}
+.field_with_errors {
+  @extend .has-error;
+}
+
+.img-perfil-small{
+  height: 30px;
+}
