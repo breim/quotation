@@ -1,0 +1,27 @@
+<h1>Listing funcionaries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @funcionaries.each do |funcionary| %>
+      <tr>
+        <td><%= funcionary.company_id %></td>
+        <td><%= funcionary.user_id %></td>
+        <td><%= link_to 'Show', funcionary %></td>
+        <td><%= link_to 'Edit', edit_funcionary_path(funcionary) %></td>
+        <td><%= link_to 'Destroy', funcionary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Funcionary', new_funcionary_path %>

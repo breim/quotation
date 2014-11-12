@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @funcionary.company_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @funcionary.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_funcionary_path(@funcionary) %> |
+<%= link_to 'Back', funcionaries_path %>

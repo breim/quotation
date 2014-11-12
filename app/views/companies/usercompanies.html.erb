@@ -1,0 +1,31 @@
+<%= render 'layouts/navbar_user' %>
+
+<div class="container">
+	<% if notice.present? %>
+	<div class="alert alert-info alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<%= notice %>
+	</div>
+	<% end %>
+	<div class="row">
+		<%= render 'layouts/menu_lateral_users' %>
+
+		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+			<div class="user-container">
+				<%= link_to "<i class='fa fa-building'></i> Cadastrar Empresa".html_safe,new_company_path,:class => "btn btn-default pull-right" %>
+				<% if @companies.sort.count != 0 %>
+				<h4>Empresas que você administra</h4>
+				<hr>
+
+				<%= render 'companies/companies_list' %>
+
+				<% else %>
+				<div class="text-center">
+					Você ainda não tem nenhuma empresa no cadastro
+				</div>
+				<% end %>
+			</div>
+
+		</div>
+	</div>
+</div>

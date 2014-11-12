@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :quotes, :path => 'cotacoes'
+
+  resources :categories
+
+  resources :funcionaries
+
+  resources :companies, :path => 'empresas'
+  get '/minhas-empresas' => 'companies#usercompanies', as: :user_companies
+  get '/painel-de-cotacoes' => 'quotes#painel', as: :cotacoes_painel
+
   devise_for :users
   resources :system, :path => 'sistema'
 

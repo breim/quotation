@@ -217,7 +217,10 @@ pt-BR:
         location: "O local da vaga"
         description: "A descrição da vaga"
       company:
-        description: "A descrição"
+        name: "Nome fantasia"
+        cnpj: "O CNPJ"
+        category_id: "A categoria"
+        location: "O endereço"
   helpers:
     page_entries_info:
       more_pages:

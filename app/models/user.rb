@@ -8,6 +8,13 @@ class User < ActiveRecord::Base
   validates :name, :presence => true
 
 
+  # Relacionamentos
+  
+  has_many :funcionaries
+  has_many :companies, :through => :funcionaries
+
+  
+
 
   #PaperClip
   has_attached_file :image, :styles => {

@@ -7,8 +7,11 @@ gem 'bootstrap-kaminari-views' # adiciona o thema do bootstrap 3 nas page views
 gem 'friendly_id'
 gem 'devise-async'
 gem 'bootstrap-sass', '~> 3.3.0'
-gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 4.2.0'
 gem 'paperclip'
+gem 'bootstrap-datepicker-rails'
+#gem 'cancancan', '~> 1.9'
+
 
 group :development do
 	gem 'thin'

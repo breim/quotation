@@ -1,0 +1,15 @@
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">Menu</h3>
+				</div>
+				<div class="panel-body">
+					<ul class="nav nav-pills nav-stacked" role="tablist">
+						<li class="<%= is_active?(system_index_path) %>"><%= link_to "<i class='fa fa-home'></i> Home".html_safe,system_index_path %></li>
+						<li class="<%= is_active?(user_companies_path) %>"><%= link_to "<i class='fa fa-building'></i> Empresas".html_safe,user_companies_path %></li>
+						<li class="<%= is_active?(cotacoes_painel_path) %>"><%= link_to "<i class='fa fa-list'></i> Cotações".html_safe,cotacoes_painel_path %></li>
+						<li class="<%= is_active?(root_path) %>"><%= link_to "<i class='fa fa-file-text'></i> Pedidos".html_safe,system_index_path %></li>						
+					</ul>
+				</div>
+			</div>
+		</div>
