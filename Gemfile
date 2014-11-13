@@ -10,7 +10,10 @@ gem 'bootstrap-sass', '~> 3.3.0'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'paperclip'
 gem 'bootstrap-datepicker-rails'
+gem 'date_validator'
+gem "cocoon"
 #gem 'cancancan', '~> 1.9'
+
 
 
 group :development do
