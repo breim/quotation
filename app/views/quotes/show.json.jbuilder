@@ -1,1 +1,1 @@
-json.extract! @quote, :id, :name, :description, :data_entega, :user_id, :created_at, :updated_at
+json.extract! @quote, :id, :name, :description, :prazo_de_resposta, :user_id, :created_at, :updated_at

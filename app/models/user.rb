@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :funcionaries
   has_many :companies, :through => :funcionaries
 
+  has_many :quotes
+
   
 
 

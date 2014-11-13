@@ -115,6 +115,11 @@ pt-BR:
       not_a_number: não é um número
       not_an_integer: não é um número inteiro
       odd: deve ser ímpar
+      not_a_date: "não é uma data válida"
+      after: "deve ser após %{date}"
+      after_or_equal_to: "deve ser após ou igual a %{date}"
+      before: "deve ser antes de %{date}"
+      before_or_equal_to: "deve ser antes ou igual a %{date}"
       record_invalid: ! 'A validação falhou: %{errors}'
       restrict_dependent_destroy:
         one: "Não é possível excluir o registro pois existe um %{record} dependente"
@@ -221,6 +226,11 @@ pt-BR:
         cnpj: "O CNPJ"
         category_id: "A categoria"
         location: "O endereço"
+      quote:
+        name: "O título da cotação"
+        description: "A descrição"
+        prazo_de_resposta: "O prazo de resposta"
+        company_id: "A empresa responsável"
   helpers:
     page_entries_info:
       more_pages:

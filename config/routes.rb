@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+ 
+
+  resources :itens
+
   resources :quotes, :path => 'cotacoes'
 
   resources :categories

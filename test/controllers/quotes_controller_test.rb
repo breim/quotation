@@ -18,7 +18,7 @@ class QuotesControllerTest < ActionController::TestCase
 
   test "should create quote" do
     assert_difference('Quote.count') do
-      post :create, quote: { data_entega: @quote.data_entega, description: @quote.description, name: @quote.name, user_id: @quote.user_id }
+      post :create, quote: { prazo_de_resposta: @quote.prazo_de_resposta, description: @quote.description, name: @quote.name, user_id: @quote.user_id }
     end
 
     assert_redirected_to quote_path(assigns(:quote))
@@ -35,7 +35,7 @@ class QuotesControllerTest < ActionController::TestCase
   end
 
   test "should update quote" do
-    patch :update, id: @quote, quote: { data_entega: @quote.data_entega, description: @quote.description, name: @quote.name, user_id: @quote.user_id }
+    patch :update, id: @quote, quote: { prazo_de_resposta: @quote.prazo_de_resposta, description: @quote.description, name: @quote.name, user_id: @quote.user_id }
     assert_redirected_to quote_path(assigns(:quote))
   end
 

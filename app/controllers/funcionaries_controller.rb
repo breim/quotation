@@ -42,6 +42,6 @@ class FuncionariesController < ApplicationController
     end
 
     def funcionary_params
-      params.require(:funcionary).permit(:company_id, :user_id)
+      params.require(:funcionary).permit(:company_id, :user_id,:authorized)
     end
 end

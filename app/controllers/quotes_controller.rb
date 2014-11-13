@@ -25,13 +25,15 @@ class QuotesController < ApplicationController
 
   def create
     @quote = Quote.new(quote_params)
+
+    @quote.user_id = current_user.id
     @quote.save
     respond_with(@quote)
   end
 
   def update
     @quote.update(quote_params)
-    respond_with(@quote)
+    redirect_to quotes_path
   end
 
   def destroy
@@ -40,11 +42,11 @@ class QuotesController < ApplicationController
   end
 
   private
-    def set_quote
-      @quote = Quote.find(params[:id])
-    end
+  def set_quote
+    @quote = Quote.find(params[:id])
+  end
 
-    def quote_params
-      params.require(:quote).permit(:name, :description, :data_entrega, :user_id)
-    end
+  def quote_params
+    params.require(:quote).permit(:name, :description, :prazo_de_resposta,:company_id, :user_id, itens_attributes: [:id, :name,:amount,:part_number, :_destroy])
+  end
 end
