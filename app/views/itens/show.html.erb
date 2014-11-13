@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @iten.name %>
+</p>
+
+<p>
+  <strong>amount:</strong>
+  <%= @iten.amount %>
+</p>
+
+<p>
+  <strong>Part number:</strong>
+  <%= @iten.part_number %>
+</p>
+
+<p>
+  <strong>Quote:</strong>
+  <%= @iten.quote_id %>
+</p>
+
+<%= link_to 'Edit', edit_iten_path(@iten) %> |
+<%= link_to 'Back', itens_path %>

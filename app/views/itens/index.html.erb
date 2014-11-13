@@ -1,0 +1,31 @@
+<h1>Listing itens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>amount</th>
+      <th>Part number</th>
+      <th>Quote</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @itens.each do |iten| %>
+      <tr>
+        <td><%= iten.name %></td>
+        <td><%= iten.amount %></td>
+        <td><%= iten.part_number %></td>
+        <td><%= iten.quote_id %></td>
+        <td><%= link_to 'Show', iten %></td>
+        <td><%= link_to 'Edit', edit_iten_path(iten) %></td>
+        <td><%= link_to 'Destroy', iten, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Iten', new_iten_path %>
