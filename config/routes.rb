@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
  
 
+  resources :invitations
+
   resources :itens
 
-  resources :quotes, :path => 'cotacoes'
+  resources :quotes, :path => 'cotacoes' do 
+    resources :invitations
+  end
 
   resources :categories
 
@@ -12,6 +16,10 @@ Rails.application.routes.draw do
   resources :companies, :path => 'empresas'
   get '/minhas-empresas' => 'companies#usercompanies', as: :user_companies
   get '/painel-de-cotacoes' => 'quotes#painel', as: :cotacoes_painel
+  get '/busca/empresas' => 'companies#search', as: :busca_empresas
+  get '/convidar/:id/:quote' => 'invitations#send_invite', as: :send_invite
+  get '/desconvidar/:id/:quote' => 'invitations#broke_invite', as: :broke_invite
+  get '/enviar-cotacao/:quote_id' => 'invitations#send_quotation', as: :send_quotation
 
   devise_for :users
   resources :system, :path => 'sistema'
