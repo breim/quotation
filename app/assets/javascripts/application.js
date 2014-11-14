@@ -16,4 +16,8 @@
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js
 //= require cocoon
+//= require jqueryValidation
+//= require livequery
+//= require maskedMoney
+//= require maskedInput
 //= require_tree .
