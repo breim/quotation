@@ -1,0 +1,29 @@
+<% if params[:search] %>
+<div class="panel panel-default">
+	<div class="panel-heading">Resultado da busca</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Empresa</th>
+				<th>CNPJ</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @companies.each do |company| %>
+			<tr>
+				<td><%= link_to company.name,:action => 'show', :id => company.id  %></td>
+				<td><%= link_to company.cnpj,:action => 'show', :id => company.id  %></td>
+				<td><%= link_to "<i class='fa fa-plus'></i>".html_safe,send_invite_path(company,quote: @quote),:class => 'btn btn-success',remote: :true %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+<% end %>
+<script>
+$(".btn-success").click(function() {
+	 $(this).slideUp();
+});
+</script>

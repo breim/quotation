@@ -1,0 +1,24 @@
+<div class="panel-distance">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Empresas convidadas</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Empresa</th>
+					<th>CNPJ</th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @inviteds.each do |company| %>
+				<tr>
+					<td><%= link_to company.name,:action => 'show', :id => company.id  %></td>
+					<td><%= link_to company.cnpj,:action => 'show', :id => company.id  %></td>
+					<td><%= link_to "<i class='fa fa-minus'></i>".html_safe,broke_invite_path(company,quote: @quote),:class => 'btn btn-danger',remote: :true %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
