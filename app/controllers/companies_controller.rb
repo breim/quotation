@@ -15,9 +15,19 @@ class CompaniesController < ApplicationController
   def usercompanies
     @companies = Company.where(:user_id => current_user.id)
     @user = current_user
-    
     @teste = Company.all
   end
+
+  def search
+      if params[:quote_id]
+        @quote = params[:quote_id]
+      end
+      @companies = Company.search params[:search]
+      respond_to do |format|
+        format.js {render :file => "/companies/search.js.erb"}
+      end
+  end
+
 
 
   def new
@@ -46,11 +56,11 @@ class CompaniesController < ApplicationController
   end
 
   private
-    def set_company
-      @company = Company.find(params[:id])
-    end
+  def set_company
+    @company = Company.find(params[:id])
+  end
 
-    def company_params
-      params.require(:company).permit(:name, :cnpj, :category_id, :location, :latitude, :longitude,:user_id)
-    end
+  def company_params
+    params.require(:company).permit(:name, :cnpj, :category_id, :location, :latitude, :longitude,:user_id)
+  end
 end

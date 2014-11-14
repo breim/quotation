@@ -19,6 +19,12 @@ class QuotesController < ApplicationController
 
   def painel
   end
+ 
+  def select_companies
+    
+  end
+
+  
 
   def edit
   end
@@ -28,7 +34,7 @@ class QuotesController < ApplicationController
 
     @quote.user_id = current_user.id
     @quote.save
-    respond_with(@quote)
+    redirect_to quote_invitations_path(@quote)
   end
 
   def update
