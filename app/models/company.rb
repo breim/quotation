@@ -3,6 +3,9 @@ class Company < ActiveRecord::Base
    has_many :funcionaries
    has_many :users, :through => :funcionaries
 
+   has_many :invitations
+   has_many :companies, :through => :invitations
+
    belongs_to :category
    has_many :quotes
 
@@ -15,13 +18,18 @@ class Company < ActiveRecord::Base
    validates :category_id, :presence => true
 
 
+   def self.search(search)
+      search_condition = "%" + search + "%"
+      where('name LIKE ? OR cnpj LIKE ?',search_condition, search_condition)
+   end
+
    after_create :add_user_funcionaries
    def add_user_funcionaries
-   	@funcionary = Funcionary.new
-   	@funcionary.user_id = current_user.id
-   	@funcionary.company_id = self.id
-   	@funcionary.authorized = true
-   	@funcionary.save!
+     @funcionary = Funcionary.new
+     @funcionary.user_id = current_user.id
+     @funcionary.company_id = self.id
+     @funcionary.authorized = true
+     @funcionary.save!
    end
 
 end

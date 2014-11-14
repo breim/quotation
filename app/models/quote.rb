@@ -2,6 +2,9 @@ class Quote < ActiveRecord::Base
 
 	belongs_to :user
 	belongs_to :company
+
+	has_many :invitations
+    has_many :companies, :through => :invitations
 	
 	has_many :itens
 	accepts_nested_attributes_for :itens, :reject_if => :all_blank, :allow_destroy => true
