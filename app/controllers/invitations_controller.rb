@@ -1,5 +1,6 @@
 class InvitationsController < ApplicationController
   before_action :set_invitation, only: [:show, :edit, :update, :destroy]
+  before_filter :validar_usuario
 
   respond_to :html
 
@@ -24,7 +25,6 @@ class InvitationsController < ApplicationController
           @invitation.company_id = @company.id
           @invitation.user_id = current_user.id
           @invitation.save!
-
           respond_to do |format|
             format.js {render :file => "/invitations/send_invite.js.erb"}
           end
@@ -49,40 +49,20 @@ class InvitationsController < ApplicationController
     end
   end
 
-
   def send_quotation
     redirect_to cotacoes_painel_path, notice: "Cotação enviada com sucesso."
   end
 
-  def show
-    respond_with(@invitation)
-  end
-
-  def new
-    @invitation = Invitation.new
-    respond_with(@invitation)
-  end
-
-  def edit
-  end
-
-  def create
-    @invitation = Invitation.new(invitation_params)
-    @invitation.save
-    respond_with(@invitation)
-  end
-
-  def update
-    @invitation.update(invitation_params)
-    respond_with(@invitation)
-  end
-
-  def destroy
-    @invitation.destroy
-    respond_with(@invitation)
-  end
 
   private
+
+  def validar_usuario
+    if current_user
+    else redirect_to root_path, notice: "Você precisa estar logado para realizar esta ação"
+
+    end
+  end
+
   def set_invitation
     @invitation = Invitation.find(params[:id])
   end
