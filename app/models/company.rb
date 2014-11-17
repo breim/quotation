@@ -33,3 +33,4 @@ class Company < ActiveRecord::Base
    end
 
 end
+

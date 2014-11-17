@@ -13,8 +13,16 @@ class User < ActiveRecord::Base
   has_many :funcionaries
   has_many :companies, :through => :funcionaries
 
+  has_many :invitations
+  
   has_many :quotes
 
+
+  def companies_quotations(reload=false)
+    @companies_quotations = nil if reload 
+    @companies_quotations ||= Invitation.where(company_id: self.id)
+  end
+  
   
 
 
