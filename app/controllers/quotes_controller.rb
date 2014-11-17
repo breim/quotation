@@ -18,6 +18,8 @@ class QuotesController < ApplicationController
   end
 
   def painel
+    @cotacoes_enviadas = current_user.quotes.order("created_at desc").page(params[:page]).per(20)
+    @cotacoes_recebidas = Quote.includes(:companies => :funcionaries).where('funcionaries.user_id' => current_user).where('funcionaries.authorized' => 1).order("quotes.created_at desc").page(params[:page_enviada]).per(20)
   end
  
   def select_companies
